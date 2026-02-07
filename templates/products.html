@@ -1,0 +1,49 @@
+{%extends "home.html" %}
+
+{%block title%}
+Our Products
+{%endblock%}
+{% block content %}
+
+<!-- FOOT WEARS -->
+<h1 class="product_category">FOOT WEARS</h1>
+<div class="products-row">
+  {% for product in products if "Footwear" in product.product_name %}
+  <div class="product-card">
+    <img src="{{ url_for('static', filename='images/' ~ product.image) }}">
+    <h4>{{ product.product_name }}</h4>
+    <p class="price">₹{{ product.price }}</p>
+    <a href="{{ url_for('add_to_cart', product_id=product.id) }}"><button class="add-to-cart">Add to Cart</button></a>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- RISING STARS -->
+<h1 class="product_category">RISING STARS</h1>
+<div class="products-row">
+  {% for product in products if "Rising" in product.product_name %}
+  <div class="product-card">
+    <img src="{{ url_for('static', filename='images/' ~ product.image) }}">
+    <h4>{{ product.product_name }}</h4>
+    <p class="price">₹{{ product.price }}</p>
+    <a href="{{ url_for('add_to_cart', product_id=product.id) }}"><button class="add-to-cart">Add to Cart</button></a>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- TOP BRANDS -->
+<h1 class="product_category">BIGGEST DEALS ON TOP BRANDS</h1>
+<div class="products-row">
+  {% for product in products if "Top Brand" in product.product_name %}
+  <div class="product-card">
+    <img src="{{ url_for('static', filename='images/' ~ product.image) }}">
+    <h4>{{ product.product_name }}</h4>
+    <p class="price">₹{{ product.price }}</p>
+    <a href="{{ url_for('add_to_cart', product_id=product.id) }}"> <button class="add-to-cart">Add to Cart</button></a></a>
+  </div>
+  {% endfor %}
+</div>
+
+
+{% endblock %}
+

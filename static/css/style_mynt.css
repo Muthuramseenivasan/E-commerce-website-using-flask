@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== HEADER ===== */
+.top-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 15px;
+    background-color: #131921;
+    color: white;
+    width: 100%;
+}
+
+.menu-bar {
+    background-color: #232f3e;
+    padding: 8px 15px;
+    display: flex;
+}
+
+.menu-bar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 14px;
+}
+
+.menu-bar a:hover {
+    text-decoration: underline;
+}
+
+.header-links {
+    display: flex;
+    gap: 20px;
+    font-size: 13px;
+}
+
+.cart {
+    font-size: 16px;
+}
+
+/* ===== SEARCH BAR ===== */
+.search-bar {
+    display: flex;
+    flex: 1;
+    height: 40px;
+    margin-left: 20px;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 14px 17px;
+    border: none;
+    outline: none;
+}
+center{
+    margin-top: 8px;
+}
+
+
+/* ===== MAIN ===== */
+main {
+    min-height: 100vh;
+    background-color: #f4f6f9;
+}
+
+/* ===== PRODUCTS ===== */
+.product_category {
+    font-size: 26px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.products-container {
+    width: 100%;
+}
+
+
+/* ROW */
+.products-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px 40px;
+    overflow-x: auto;
+}
+
+/* CARD */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 260px;
+    flex-shrink: 0;
+    /* 🔥 MOST IMPORTANT */
+}
+
+/* IMAGE */
+.product-card img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+/* BUTTON */
+.add-to-cart {
+    margin-top: 10px;
+    padding: 10px 0;
+    width: 100%;
+    background-color: #ff3f6c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* ===== AUTH FORMS ===== */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding-top: 60px;
+}
+
+.regis_form,
+.login_page {
+    display: block;
+}
+
+.input_attributes {
+    display: block;
+    width: 300px;
+    margin: 20px 10px;
+}
+
+.regis-button {
+    margin: 10px;
+}
+
+
+.cart_img {
+    width:100px;
+}
+
+.logout_body,.cart_empty{
+    text-align: center;
+    padding-top: 90px;
+}

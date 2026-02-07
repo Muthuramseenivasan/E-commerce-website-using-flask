@@ -1,0 +1,51 @@
+{% extends "home.html" %}
+
+{% block title %}
+Cart
+{% endblock %}
+
+{% block content %}
+{%if cart_items|length == 0%}
+  <h1 class="cart_empty">Your Cart Is Empty</h1>
+{% else %}
+<table border="1" cellpadding="10">
+  <tr>
+    <th>Product</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Total</th>
+    <th> Count</th>
+    <th>Total Price</th>
+    <th>Action</th>
+  </tr>
+{% for item in cart_items %}
+
+    <tr>
+      <td>{{ item.product.product_name }}</td>
+      <td>₹{{ item.product.price }}</td>
+      <td><img class="cart_img" src={{ url_for('static', filename='images/' ~item.product.image) }}></td>
+        <td>
+    <a href="{{ url_for('decrease_quantity', cart_id=item.id) }}">➖</a>
+    {{ item.quantity }}
+    <a href="{{ url_for('increase_quantity', cart_id=item.id) }}">➕</a>
+  </td>
+      <td>{{ item.quantity }}</td>
+    
+    <td>
+      ₹{{ item.product.price * item.quantity }}
+    </td>
+      
+      <td><a href="{{ url_for('remove_from_cart', cart_id=item.id) }}"
+       style="color:red;"><input type="button" class="regis-button"value="❌ Remove"></a>  </td>
+    </tr>
+  {% endfor %}
+
+  <tr>
+    <td colspan="5"><strong>Grand Total</strong></td>
+    <td><strong>₹{{ grand_total  }}</strong></td>
+    
+
+  </tr>
+</table>
+{%endif%}
+{% endblock %}
